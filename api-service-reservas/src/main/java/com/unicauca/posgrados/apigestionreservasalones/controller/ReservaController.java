@@ -34,6 +34,7 @@ public class ReservaController {
         return new ResponseEntity<>(reservas, HttpStatus.OK);
     }
 
+    @DeleteMapping("{id}")
     public ResponseEntity<String> removeReserva(@PathVariable("id") Long idReserva){
         reservaService.removeReserva(idReserva);
         return new ResponseEntity<>("Reserva eliminada satisfactoriamente", HttpStatus.OK);
